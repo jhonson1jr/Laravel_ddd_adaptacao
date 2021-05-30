@@ -1,0 +1,9 @@
+Com uso da biblioteca Spatie/data-transfer-object (na versão 2) para controle da tipagem de dados
+
+Caso ao configurar o arquivo .env o projeto apresentar erros, verifique se as execuções a seguir resolvem:
+
+php artisan config:cache
+php artisan cache:clear
+
+https://www.youtube.com/watch?v=XG9Y9VFvKag
+parei em 23:24

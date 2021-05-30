@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace App\Core\Providers;
 
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -26,7 +26,8 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string|null
      */
-    // protected $namespace = 'App\\Http\\Controllers';
+    // Descomentando para usar os Controllers do Laravel 8 como as versões anteriores
+    // protected $namespace = 'App\\Core\\Http\\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
