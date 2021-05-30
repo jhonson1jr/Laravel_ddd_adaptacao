@@ -2,6 +2,7 @@
 
 namespace Domain\Task\Models;
 
+use Domain\Task\Enums\TaskStatus;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -18,6 +19,18 @@ class Task extends Authenticatable
      */
     protected $fillable = [
         'task',
-        'category'
+        'category',
+        'status'
     ];
+
+    /**
+     * Usando Accessor para executar o processamento do campo Status quando ocorrer get
+     *
+     * @param  string  $value
+     * @return string
+    */
+    public function getStatusAttribute($value)
+    {
+        return TaskStatus::status($value); // Passando pelo Enum Type para processar o Status
+    }
 }

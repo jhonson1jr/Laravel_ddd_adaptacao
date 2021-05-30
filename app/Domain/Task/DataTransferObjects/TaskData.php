@@ -2,6 +2,7 @@
 
 namespace Domain\Task\DataTransferObjects;
 
+use App\Web\Task\Requests\TaskRequest;
 use Spatie\DataTransferObject\DataTransferObject;
 
 // DTO garantindo os tipos dos dados que estão sendo transitados com a biblioteca Spatie
@@ -9,14 +10,15 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class TaskData extends DataTransferObject
 {
-
+    // Tipagem dos dados:
+    
     /** @var string */
     public $task;
     
     /** @var string */
     public $category;
 
-    public static function fromReqnest(TaskRequest $taskRequest) : TaskData
+    public static function fromRequest(TaskRequest $taskRequest) : TaskData
     {
         return new Self([
             'task' => $taskRequest['task'],
